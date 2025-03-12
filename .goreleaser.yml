@@ -1,6 +1,6 @@
 # .goreleaser.yml
 
-project_name: sendgrid-stats-exporter
+project_name: sendgrid_exporter
 
 env:
   - GO111MODULE=on
@@ -11,8 +11,8 @@ github_urls:
   skip_tls_verify: false
 
 builds:
-  - id: sendgrid-stats-exporter
-    binary: sendgrid-stats-exporter
+  - id: sendgrid_exporter
+    binary: sendgrid_exporter
     targets:
       - linux_amd64
       - linux_arm64
@@ -29,17 +29,17 @@ builds:
       - all=-trimpath=.
 
 dockers:
-- id: sendgrid-stats-exporter
+- id: sendgrid_exporter
   image_templates:
-  - 'ghcr.io/umatare5/sendgrid-stats-exporter:latest'
-  - 'ghcr.io/umatare5/sendgrid-stats-exporter:{{ .Tag }}'
+  - 'ghcr.io/umatare5/sendgrid_exporter:latest'
+  - 'ghcr.io/umatare5/sendgrid_exporter:{{ .Tag }}'
   dockerfile: ./.goreleaser/Dockerfile
 
 archives:
-  - name_template: '{{ .ProjectName }}-v{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
+  - name_template: '{{ .ProjectName }}-{{ .Version }}.{{ .Os }}-{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
 
 release:
   prerelease: auto
 
 checksum:
-  name_template: "{{ .ProjectName }}-v{{ .Version }}_checksums.txt"
+  name_template: "{{ .ProjectName }}-{{ .Version }}_checksums.txt"

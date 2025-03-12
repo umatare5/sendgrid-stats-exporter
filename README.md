@@ -1,4 +1,4 @@
-# sendgrid-stats-exporter
+# sendgrid_exporter
 
 Prometheus exporter for SendGrid daily metrics exposed by SendGrid Stats API(v3).
 
@@ -41,29 +41,29 @@ Flags:
 
 ## Endpoints
 
-Name     | Description
----------|-------------
-`/metrics` | get metrics
-`/-/healthy` | for health check
+| Name         | Description      |
+| ------------ | ---------------- |
+| `/metrics`   | get metrics      |
+| `/-/healthy` | for health check |
 
 ## Metrics
 
-Name     | Description
----------|------------
-blocks | The number of emails that were not allowed to be delivered by ISPs.
-bounce_drops | The number of emails that were dropped because of a bounce.
-bounces | The number of emails that bounced instead of being delivered.
-deferred | The number of emails that temporarily could not be delivered.
-delivered | The number of emails SendGrid was able to confirm were actually delivered to a recipient.
-invalid_emails | The number of recipients who had malformed email addresses or whose mail provider reported the address as invalid.
-processed | Requests from your website, application, or mail client via SMTP Relay or the API that SendGrid processed.
-requests | The number of emails that were requested to be delivered.
-spam_report_drops | The number of emails that were dropped due to a recipient previously marking your emails as spam.
-spam_reports | The number of recipients who marked your email as spam.
-unique_clicks | The number of unique recipients who clicked links in your emails.
-unique_opens | The number of unique recipients who opened your emails.
-unsubscribe_drops | The number of emails dropped due to a recipient unsubscribing from your emails.
-unsubscribes | The number of recipients who unsubscribed from your emails.
+| Name              | Description                                                                                                        |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------ |
+| blocks            | The number of emails that were not allowed to be delivered by ISPs.                                                |
+| bounce_drops      | The number of emails that were dropped because of a bounce.                                                        |
+| bounces           | The number of emails that bounced instead of being delivered.                                                      |
+| deferred          | The number of emails that temporarily could not be delivered.                                                      |
+| delivered         | The number of emails SendGrid was able to confirm were actually delivered to a recipient.                          |
+| invalid_emails    | The number of recipients who had malformed email addresses or whose mail provider reported the address as invalid. |
+| processed         | Requests from your website, application, or mail client via SMTP Relay or the API that SendGrid processed.         |
+| requests          | The number of emails that were requested to be delivered.                                                          |
+| spam_report_drops | The number of emails that were dropped due to a recipient previously marking your emails as spam.                  |
+| spam_reports      | The number of recipients who marked your email as spam.                                                            |
+| unique_clicks     | The number of unique recipients who clicked links in your emails.                                                  |
+| unique_opens      | The number of unique recipients who opened your emails.                                                            |
+| unsubscribe_drops | The number of emails dropped due to a recipient unsubscribing from your emails.                                    |
+| unsubscribes      | The number of recipients who unsubscribed from your emails.                                                        |
 
 ## Dashboard
 
@@ -72,7 +72,7 @@ A sample dashbord using those metrics has been published [here](https://grafana.
 ### Running with Docker
 
 ```
-$ docker run -d -p 9154:9154 chatwork/sendgrid-stats-exporter
+$ docker run -d -p 9154:9154 chatwork/sendgrid_exporter
 ```
 
 #### Running with `docker-compose`
@@ -87,7 +87,7 @@ You can check the metrics by accessing Prometheus ([http://127.0.0.1:9200]()).
 
 #### Running with `helm`
 
-https://github.com/chatwork/sendgrid-stats-exporter/tree/main/charts
+https://github.com/chatwork/sendgrid_exporter/tree/main/charts
 
 ## Building
 
@@ -100,5 +100,5 @@ $ make
 ### Building with Docker
 
 ```
-$ docker build -t sendgrid-stats-exporter .
+$ docker build -t sendgrid_exporter .
 ```

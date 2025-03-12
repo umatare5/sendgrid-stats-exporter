@@ -81,4 +81,4 @@ $RECYCLE.BIN/
 
 # IDE
 .idea
-sendgrid-stats-exporter
+sendgrid_exporter

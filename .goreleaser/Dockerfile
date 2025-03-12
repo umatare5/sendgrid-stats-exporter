@@ -2,6 +2,6 @@ FROM busybox:glibc
 
 WORKDIR /app
 
-COPY sendgrid-stats-exporter /bin/
+COPY sendgrid_exporter /bin/
 
-ENTRYPOINT ["/bin/sendgrid-stats-exporter"]
+ENTRYPOINT ["/bin/sendgrid_exporter"]

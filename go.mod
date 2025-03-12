@@ -1,4 +1,4 @@
-module github.com/chatwork/sendgrid-stats-exporter
+module github.com/chatwork/sendgrid_exporter
 
 go 1.24
 

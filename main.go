@@ -2,12 +2,13 @@ package main
 
 import (
 	"context"
-	"github.com/prometheus/client_golang/prometheus/collectors"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/prometheus/client_golang/prometheus/collectors"
 
 	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
@@ -20,7 +21,7 @@ import (
 
 const (
 	namespace    = "sendgrid"
-	exporterName = "sendgrid-stats-exporter"
+	exporterName = "sendgrid_exporter"
 )
 
 const (

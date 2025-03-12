@@ -1,5 +1,5 @@
 USER     := ada-u
-REPO     := sendgrid-stats-exporter
+REPO     := sendgrid_exporter
 GIT_TAG  := $(shell git tag --points-at HEAD)
 GIT_HASH := $(shell git rev-parse HEAD)
 VERSION  := $(shell if [ -n "$(GIT_TAG)" ]; then echo "$(GIT_TAG)"; else echo "$(GIT_HASH)"; fi)
